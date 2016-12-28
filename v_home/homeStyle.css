@@ -1,0 +1,483 @@
+main {
+  width: 100%;
+}
+
+/* INPUT BOX */
+
+main #movie-input {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 140px;
+}
+
+main input[type="text"] {
+  padding: 30px;
+  font-size: 1rem;
+  width: 80%;
+  margin: 20px;
+  border: none;
+  color: var(--ucritic);
+  background: var(--light-gray);
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main input[type="text"]:focus {
+  outline: none;
+}
+
+main input[type="text"]::-webkit-input-placeholder {
+  color: var(--ucritic);
+}
+
+/* MOVIE POSTERS */
+
+main .movie-option-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  padding: 0px 20px 0px 0px;
+  margin-bottom: 100px;
+}
+
+main .movie-option-container .movie-search {
+  width: 100%;
+}
+
+main .movie-option-container h2 {
+  font-size: 2rem;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: var(--silver);
+}
+
+main .movie-option {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+main .movie-option p {
+  position: absolute;
+  z-index: -1;
+  text-align: center;
+  margin-left: 20px;
+  padding: 20px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  background: var(--trans1);
+  color: white;
+  border: solid 3px black;
+}
+
+main .movie-option img {
+  width: 100%;
+  height: 99.99%;
+  padding: 0px 0px 20px 20px;
+}
+
+main .movie-option img:hover {
+  opacity: 0.3;
+}
+
+/* MOVIE STATS */
+
+main .movie-stats {
+  //display: none;
+  width: 100%;
+  height: 260px;
+}
+
+main .movie-stats img {
+  height: 245px;
+  margin: 0px 0px 20px 20px;
+}
+
+main .graph {
+  text-align: center;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  padding-right: 17px;
+  width: 478px;
+  right: 0;
+}
+
+main .rater {
+  position: absolute;
+  margin-top: -20px;
+  z-index: 1;
+  cursor: row-resize;
+  width: 100%;
+  height: 280px;
+}
+
+main .graph .bar {
+  width: 45px;
+  position: relative;
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .graph .bar .title {
+  transform: rotate(-90deg);
+  text-align: left;
+  position: absolute;
+  margin-top: 40px;
+  width: 185px;
+  height: 155px;
+  float: left;
+  color: white;
+}
+
+main .graph .bar .rating {
+  position: absolute;
+  margin-top: 10px;
+  right: 0;
+  left: 0;
+  color: white;
+}
+
+main .graph .bar .left-over {
+  height: 240px;
+  background-color: var(--main);
+}
+
+main .graph .bar .graph-bar {
+  height: 0px;
+  background-color: purple;
+}
+
+#inspiring-bar .graph-bar {
+  background-color: var(--inspiring);
+}
+
+#re-watchability-bar .graph-bar {
+  background-color: var(--re-watchability);
+}
+
+#scary-bar .graph-bar {
+  background-color: var(--scary);
+}
+
+#thinker-bar .graph-bar {
+  background-color: var(--thinker);
+}
+
+#comedic-bar .graph-bar {
+  background-color: var(--comedic);
+}
+
+#romantic-bar .graph-bar {
+  background-color: var(--romantic);
+}
+
+#gory-bar .graph-bar {
+  background-color: var(--gory);
+}
+
+#intense-bar .graph-bar {
+  background-color: var(--intense);
+}
+
+#movie-poster {
+  position: absolute;
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .movie-info {
+  background: var(--main);
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 30px;
+  margin-left: 20px;
+  color: white;
+  width: 100%;
+  margin-bottom: 20px;
+  display: none;
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .add-comment {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  width: 100%;
+}
+
+main .add-comment input[type=text],
+main .add-comment textarea {
+  background: var(--trans3);
+  width: calc(100% - 90px);
+  -webkit-box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial;
+  text-align: justify;
+  padding: 30px 30px 15px 30px;
+  color: white;
+  resize: none;
+  border: solid 1px var(--main);
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .add-comment button {
+  width: 50px;
+  position: absolute;
+  margin: 16px 22px;
+  font-size: 32px;
+  background: var(--trans2);
+  height: 50px;
+  color: var(--ucritic);
+  box-shadow: 5px 5px 0px var(--trans2);
+  border: solid 1px var(--main);
+}
+
+main .add-comment button:hover {
+  border-color: var(--ucritic);
+  cursor: pointer;
+}
+
+main .show-comment {
+  background: var(--main);
+  border: solid 5px var(--main);
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 15px 15px 15px 25px;
+  margin-left: 20px;
+  color: white;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .comments {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: 100%;
+}
+
+main .comments .comment p {
+  width: 97.5%;
+  font-size: 14px;
+  padding: 5px 0px 0px 0px;
+}
+
+main .comments .comment span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+
+main .comments .comment .toggleComment {
+  padding: 0px 5px;
+  border: solid 1px rgba(255,255,255,0.6);
+}
+
+main .comments .subComment .commentInfo {
+  padding-right: 15px;
+}
+
+main .reply input[type=text],
+main .reply textarea {
+  background: var(--dark-gray);
+  width: calc(100% - 90px);
+  -webkit-box-sizing: border-box;
+  font-size: 14px;
+  font-family: Arial;
+  text-align: justify;
+  padding: 30px 30px 15px 30px;
+  margin-top: 15px;
+  color: white;
+  resize: none;
+  border: solid 1px var(--main);
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .reply button {
+  width: 50px;
+  position: absolute;
+  margin: 31px 22px;
+  font-size: 32px;
+  background: var(--dark-gray);
+  height: 50px;
+  color: var(--ucritic);
+  box-shadow: 5px 5px 0px var(--trans2);
+  border: solid 1px var(--main);
+}
+
+main .reply button:hover {
+  border-color: var(--ucritic);
+  cursor: pointer;
+}
+
+main .reply {
+  display: none;
+}
+
+main .show-reply {
+  background: var(--trans3);
+  border: solid 1px var(--trans2);
+  text-align: justify;
+  padding: 15px 15px 15px 25px;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .comments .comment .infoRight {
+  float: right;
+}
+
+main .comments .comment .infoLeft {
+  float: left;
+}
+
+main .comments a:hover {
+  cursor: pointer;
+}
+
+main .comment {
+  //background: #1d1f22;
+  background: var(--main);
+  border: solid 5px var(--main);
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 15px 15px 15px 25px;
+  margin-left: 20px;
+  color: white;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+main .comment .subComment {
+  //background: #1d1f22;
+  background: var(--trans3);
+  border: solid 1px var(--trans2);
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 15px 5px 15px 25px;
+  margin-top: 15px;
+  color: white;
+  width: 100%;
+  box-shadow: 5px 5px 0px var(--trans2);
+}
+
+#newComment {
+  background: #002c42;
+  border: solid 5px #002c42;
+}
+
+#newReply {
+  border: solid 1px var(--trans2);
+}
+
+#your-profile {
+  color: var(--ucritic);
+}
+
+@media(min-width: 415px) {
+  main .movie-option-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  main .movie-option {
+    width: 50%;
+  }
+  main .movie-option-container img {
+    max-width: 375px;
+    //position: absolute;
+  }
+}
+@media(max-width: 415px) {
+  main .movie-stats {
+    width: 100%;
+    position: relative;
+  }
+}
+@media(max-width: 620px) {
+  main .movie-stats {
+    width: 100%;
+    height: auto !important;
+    padding-right: 20px;
+  }
+  #movie-poster {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: auto;
+    margin-left: 20px;
+    margin-right: -20px;
+  }
+}
+@media(min-width: 683px) {
+  main .movie-option {
+    width: 33.333333%;
+  }
+  .movie-option:nth-of-type(10) img {
+    display: none;
+  }
+}
+@media(max-width: 790px) {
+  main .graph {
+    transform: rotate(90deg);
+    margin-top: 112px;
+    margin-right: -99px;
+    text-align: left;
+  }
+  .rating {
+    transform: rotate(-90deg);
+    margin-top: 16px;
+  }
+  main .movie-stats img {
+    height: 96%;
+    //width: 96%;
+  }
+  main .movie-stats {
+    height: 474px;
+    width: auto;
+  }
+  #synopsis {
+    margin-top: 20px;
+  }
+  #movie-poster {
+    position: relative;
+  }
+}
+@media(min-width: 856px) {
+  main .movie-option {
+    width: 25%;
+  }
+  .movie-option:nth-of-type(9) img {
+    display: none;
+  }
+}
+@media(min-width: 1134px) {
+  main .movie-option {
+    width: 20%;
+  }
+  .movie-option:nth-of-type(9) img {
+    display: flex;
+  }
+  .movie-option:nth-of-type(10) img {
+    display: flex;
+  }
+}
+@media(min-width: 1000px) {
+  main {
+    width: 1000px;
+    margin: auto;
+  }
+}
+@media(max-width: 1000px) {
+  main #movie-input {
+    padding-top: 0px;
+  }
+}

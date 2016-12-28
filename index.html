@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="ucritic">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="reset.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="v_blog/blogStyle.css">
+        <link rel="stylesheet" type="text/css" href="v_home/homeStyle.css">
+        <link rel="stylesheet" type="text/css" href="v_profile/profileStyle.css">
+        <link rel="stylesheet" type="text/css" href="v_theater/theaterStyle.css">
+        <link rel="icon" href="src/logo.png">
+        <title>UCritic</title>
+    </head>
+
+    <body>
+
+        <div class="header-back"></div>
+        <section class="banner-corners">
+          <div class="banner-corner">
+            <div id="left-banner-corner"></div>
+          </div>
+          <div class="banner-corner">
+            <div id="right-banner-corner"></div>
+          </div>
+        </section>
+
+        <header>
+          <h1><a ui-sref="home"><span id="U">U</span>Critic</a></h1>
+          <div class="ham-menu" ng-click="modal = !modal">
+            <div class="ham-lines" id="ham">
+              <div class="ham-line"></div>
+              <div class="ham-line"></div>
+              <div class="ham-line"></div>
+            </div>
+          </div>
+          <div class="inner-ham-menu">
+            <ul>
+              <li><a ui-sref="theater">Theater</a></li>
+              <li><a ui-sref="blog">Blog</a></li>
+              <li><a ui-sref="profile">Profile</a></li>
+            </ul>
+          </div>
+        </header>
+
+        <section class="modal-menu" ng-show="modal">
+          <ul>
+            <li ng-click="modal = !modal" id="li-a" ui-sref="theater"><a id="a-b">Theater</a></li>
+            <li ng-click="modal = !modal" id="li-a" ui-sref="blog"><a id="a-b">Blog</a></li>
+            <li ng-click="modal = !modal" id="li-a" ui-sref="profile"><a id="a-b">Profile</a></li>
+          </ul>
+        </section>
+
+        <main ng-controller="mainCtrl">
+          <form id="movie-input">
+            <input ng-model="movie" ng-change="searchMovie(movie)" id="target" autocomplete="off" type="text" placeholder="Search for a movie or TV show">
+          </form>
+        </main>
+
+        <ui-view></ui-view>
+
+        <div class="footer-back"></div>
+        <footer>
+
+          <section class="social-media">
+
+            <div class="tw"><a href="https://twitter.com/">
+              <svg id="sm-a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" xml:space="preserve">
+  							<circle id="sm-b" fill="rgba(0,0,0,0)" cx="50" cy="50" r="45"></circle>
+  							<path fill="#fff" d="M71.3,39.4c-1.6,0.7-3.3,1.2-5,1.4c1.8-1.1,3.2-2.8,3.8-4.8c-1.7,1-3.6,1.7-5.6,2.1c-1.6-1.7-3.9-2.8-6.4-2.8 c-4.8,0-8.8,3.9-8.8,8.8c0,0.7,0.1,1.4,0.2,2c-7.3-0.4-13.7-3.9-18-9.1c-0.8,1.3-1.2,2.8-1.2,4.4c0,3,1.5,5.7,3.9,7.3 c-1.4,0-2.8-0.4-4-1.1c0,0,0,0.1,0,0.1c0,4.2,3,7.8,7,8.6c-0.7,0.2-1.5,0.3-2.3,0.3c-0.6,0-1.1-0.1-1.6-0.2c1.1,3.5,4.3,6,8.2,6.1 c-3,2.3-6.8,3.7-10.9,3.7c-0.7,0-1.4,0-2.1-0.1c3.9,2.5,8.5,3.9,13.4,3.9C58.2,70,67,56.7,67,45.1c0-0.4,0-0.8,0-1.1 C68.7,42.7,70.2,41.2,71.3,39.4L71.3,39.4z"></path>
+  						</svg>
+            </a></div>
+
+            <div class="fb"><a href="https://www.facebook.com/">
+              <svg id="sm-a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" xml:space="preserve">
+  							<circle id="sm-b" fill="rgba(0,0,0,0)" cx="50" cy="50" r="45"></circle>
+  							<path fill="#fff" d="M53.3,71.3V51.9h6.5l1-7.6h-7.5v-4.8c0-2.2,0.6-3.7,3.8-3.7l4,0V29c-0.7-0.1-3.1-0.3-5.9-0.3 c-5.8,0-9.8,3.5-9.8,10v5.6h-6.5v7.6h6.5v19.5H53.3z"></path>
+  						</svg>
+            </a></div>
+
+            <div class="li"><a href="https://linkedin.com">
+              <svg id="sm-a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" xml:space="preserve">
+  							<circle id="sm-b" fill="rgba(0,0,0,0)" cx="50" cy="50" r="45"></circle>
+  							<path fill="#fff" d="M39.1,69.1V43.3h-8.6v25.8H39.1z M34.8,39.8c3,0,4.9-2,4.9-4.5c-0.1-2.5-1.9-4.5-4.8-4.5 c-2.9,0-4.9,1.9-4.9,4.5C30,37.8,31.9,39.8,34.8,39.8L34.8,39.8L34.8,39.8z M43.8,69.1h8.6V54.7c0-0.8,0.1-1.5,0.3-2.1 c0.6-1.5,2-3.1,4.4-3.1c3.1,0,4.3,2.4,4.3,5.8v13.8H70V54.3c0-7.9-4.2-11.6-9.9-11.6c-4.6,0-6.7,2.6-7.8,4.3h0.1v-3.7h-8.6 C43.9,45.7,43.8,69.1,43.8,69.1L43.8,69.1z"></path>
+  						</svg>
+            </a></div>
+
+          </section>
+
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script src="app.js"></script>
+        <script src="mainCtrl.js"></script>
+        <script src="v_blog/blogCtrl.js"></script>
+        <script src="v_home/homeCtrl.js"></script>
+        <script src="v_profile/profileCtrl.js"></script>
+        <script src="v_theater/theaterCtrl.js"></script>
+        <script src="v_home/homeSvc.js"></script>
+        <script src="directives/changeBar.js"></script>
+
+    </body>
+
+</html>

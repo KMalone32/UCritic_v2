@@ -1,0 +1,228 @@
+<main role="main">
+  <div class="movie-option-container" id="movie-result">
+    <div class="movie-search" ng-show="viewMovie">
+      <div class="movie-option" ng-repeat="movie in movies">
+        <p> {{movie.Title}} <br><br> {{movie.Year}} </p>
+        <img ng-click="toggleView(movie)" ng-src="{{movie.Poster}}">
+      </div>
+    </div>
+    <div class="movie-stats" ng-hide="viewMovie">
+      <img id="movie-poster" src="{{curMovie.Poster}}">
+      <section class="graph">
+        <div class="bar" id="inspiring-bar">
+          <div change-bar class="rater"></div>
+          <p class="title">Inspiring</p>
+          <span class="rating">70%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="re-watchability-bar">
+          <div change-bar class="rater"></div>
+          <p class="title">Re-Watchability</p>
+          <span class="rating">86%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="scary-bar">
+          <div change-bar class="rater"></div>
+          <p class="title">Scary</p>
+          <span class="rating">10%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="thinker-bar">
+          <div change-bar class="rater"></div>
+          <p class="title">Thinker</p>
+          <span class="rating">95%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="comedic-bar">
+          <div change-bar class="rater"></div>
+          <p class="title">Comedic</p>
+          <span class="rating">22%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="romantic-bar">
+          <div change-bar class="rater"></div>
+          <p class="title">Romantic</p>
+          <span class="rating">55%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="gory-bar">
+          <div change-bar class="rater"></div>
+          <p class="title">Gory</p>
+          <span class="rating">99%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+        <div class="bar" id="intense-bar">
+          <div change-bar class="rater"></div>
+          <p class="title">Intense</p>
+          <span class="rating">83%</span>
+          <div class="left-over"></div>
+          <div class="graph-bar"></div>
+        </div>
+      </section>
+    </div>
+    <section class="movie-info" id="synopsis" ng-hide="viewMovie"></section>
+    <section class="add-comment" ng-hide="viewMovie">
+      <textarea ng-change="displayNewComment(userComment)" ng-model="userComment" type="text" placeholder="type your comment here..."></textarea>
+      <button ng-click="addComment(userComment)">+</button>
+    </section>
+    <section class="show-comment" ng-show="viewComment">
+      {{userComment}}
+    </section>
+    <section class="comments" ng-hide="viewMovie">
+      <div class="comment">
+        <div class="commentInfo">
+          <span class="infoLeft">
+            <a>Profile_Name</a>
+          </span>
+          <span class="infoRight">
+            <a ng-click="support($event)">Support</a>
+             |
+            <a ng-click="reply($event)">Reply</a>
+             |
+            <a ng-click="minimize($event)">Minimize</a>
+          </span>
+        </div><br>
+        <div class="commentContent">
+          <p>This is a comment.</p>
+          <div class="reply">
+            <textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>
+            <button ng-click="addReply(userReply, $event)">+</button>
+          </div>
+          <div class="subComment">
+            <div class="commentInfo">
+              <span class="infoLeft">
+                <a>Profile_Name</a>
+              </span>
+              <span class="infoRight">
+                <a ng-click="support($event)">Support</a>
+                 |
+                <a ng-click="reply($event)">Reply</a>
+                 |
+                <a ng-click="minimize($event)">Minimize</a>
+              </span>
+            </div><br>
+            <div class="commentContent">
+              <p>This is a subcomment.</p>
+              <div class="reply">
+                <textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>
+                <button ng-click="addReply(userReply, $event)">+</button>
+              </div>
+              <div class="subComment">
+                <div class="commentInfo">
+                  <span class="infoLeft">
+                    <a>Profile_Name</a>
+                  </span>
+                  <span class="infoRight">
+                    <a ng-click="support($event)">Support</a>
+                     |
+                    <a ng-click="reply($event)">Reply</a>
+                     |
+                    <a ng-click="minimize($event)">Minimize</a>
+                  </span>
+                </div><br>
+                <div class="commentContent">
+                  <p>This is an inner subcomment. This comment is longer than all of the rest. This should wrap around. Lets see what this does....</p>
+                  <div class="reply">
+                    <textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>
+                    <button ng-click="addReply(userReply, $event)">+</button>
+                  </div>
+                  <div class="subComment">
+                    <div class="commentInfo">
+                      <span class="infoLeft">
+                        <a>Profile_Name</a>
+                      </span>
+                      <span class="infoRight">
+                        <a ng-click="support($event)">Support</a>
+                         |
+                        <a ng-click="reply($event)">Reply</a>
+                         |
+                        <a ng-click="minimize($event)">Minimize</a>
+                      </span>
+                    </div><br>
+                    <div class="commentContent">
+                      <p>This is an inner inner subcomment.</p>
+                      <div class="reply">
+                        <textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>
+                        <button ng-click="addReply(userReply, $event)">+</button>
+                      </div>
+                      <div class="subComment">
+                        <div class="commentInfo">
+                          <span class="infoLeft">
+                            <a>Profile_Name</a>
+                          </span>
+                          <span class="infoRight">
+                            <a ng-click="support($event)">Support</a>
+                             |
+                            <a ng-click="reply($event)">Reply</a>
+                             |
+                            <a ng-click="minimize($event)">Minimize</a>
+                          </span>
+                        </div><br>
+                        <div class="commentContent">
+                          <p>This is an inner inner subcomment.</p>
+                          <div class="reply">
+                            <textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>
+                            <button ng-click="addReply(userReply, $event)">+</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="subComment">
+                    <div class="commentInfo">
+                      <span class="infoLeft">
+                        <a>Profile_Name</a>
+                      </span>
+                      <span class="infoRight">
+                        <a ng-click="support($event)">Support</a>
+                         |
+                        <a ng-click="reply($event)">Reply</a>
+                         |
+                        <a ng-click="minimize($event)">Minimize</a>
+                      </span>
+                    </div><br>
+                    <div class="commentContent">
+                      <p>This is a sibling comment.</p>
+                      <div class="reply">
+                        <textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>
+                        <button ng-click="addReply(userReply, $event)">+</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="commentInfo">
+          <span class="infoLeft">
+            <a>Profile_Name</a>
+          </span>
+          <span class="infoRight">
+            <a ng-click="support($event)">Support</a>
+             |
+            <a ng-click="reply($event)">Reply</a>
+             |
+            <a ng-click="minimize($event)">Minimize</a>
+          </span>
+        </div><br>
+        <div class="commentContent">
+          <p>This is a comment.</p>
+          <div class="reply">
+            <textarea ng-change="displayNewReply(userReply)" ng-model="userReply" type="text" placeholder="type your reply here..."></textarea>
+            <button ng-click="addReply(userReply, $event)">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
