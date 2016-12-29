@@ -1,0 +1,89 @@
+.theater-button {
+  margin: 50px auto;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  font-size: 45px;
+  font-family: Impact, Charcoal, sans-serif;
+  color: white;
+}
+
+.theater-button p {
+  padding: 30px 15px 30px 15px;
+}
+
+.theater-button button {
+  padding: 20px;
+  font-size: 45px;
+  font-family: Impact, Charcoal, sans-serif;
+  color: white;
+  background: var(--main);
+  border: solid 5px var(--trans2);
+}
+
+.theater-button button:hover {
+  border-color: var(--ucritic);
+  cursor: pointer;
+}
+
+#first-letter {
+  color: var(--ucritic);
+}
+
+.old-theaters h1 {
+  width: 86%;
+  margin: auto;
+  font-size: 40px;
+}
+
+.old-theaters {
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.old-theaters table {
+  margin: auto;
+  width: 87%;
+}
+
+.old-theaters th {
+  font-size: 22px;
+  text-align: left;
+}
+
+.old-theaters td {
+  background: var(--main);
+  font-family: Arial;
+  text-align: center;
+}
+
+.old-theaters td:hover {
+  cursor: pointer;
+}
+
+.old-theaters th, .old-theaters td {
+  width: 32%;
+  padding: 10px;
+  border: solid 5px var(--dark-gray);
+  vertical-align: middle;
+}
+
+.old-theaters th:nth-child(1), .old-theaters td:nth-child(1) {
+  width: 25%;
+}
+
+.old-theaters th:nth-child(2), .old-theaters td:nth-child(2) {
+  width: 71%;
+}
+
+.old-theaters th:nth-child(3), .old-theaters td:nth-child(3) {
+  width: 4%;
+}
+
+.old-theaters td:nth-child(2) {
+  text-align: left;
+}
+
+.old-theaters td:nth-child(3):hover {
+  color: var(--ucritic);
+}
