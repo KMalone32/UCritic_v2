@@ -6,6 +6,7 @@ angular.module("ucritic").directive('changeBar', ['$document' , function($docume
         element.bind('mousedown', function($event) {
           $document.bind('mousemove', mousemove);
           $document.bind('mouseup', mouseup);
+          $event.preventDefault();
           return false;
         });
 

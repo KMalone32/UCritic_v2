@@ -1,44 +1,54 @@
-angular.module("ucritic").directive('moveSetting', ['$document' , function($document) {
+angular.module("ucritic").directive('moveSetting', function($document) {
     return {
       restrict: 'A',
       link: function(scope, element, attributes) {
 
-        element.bind('mousedown', function($event) {
-          $document.bind('mousemove', mousemove);
-          $document.bind('mouseup', mouseup);
+        var dragSrc = null;
+
+        function handleDragStart(e) {
+          dragSrc = this;
+          e.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleDragOver(e) {
+          if (e.preventDefault) { e.preventDefault(); }
+          e.dataTransfer.dropEffect = 'move';
           return false;
-        });
+        }
 
-        var y;
-        element.on('mousedown', function($event) {
-          y = $event.offsetY;
-          console.log("init y: " + y);
-        });
+        function handleDragEnter(e) {
+          $(this).find(".hover-arrow-left").css("display", "block");
+          $(this).find(".hover-arrow-right").css("display", "block");
+        }
 
-        function mousemove($event) {
-          //var index = element.index();
-          var aboveY = y+20;
-          var belowY = y-20;
-          var list = element.parent();
-          if ($event.offsetY >= aboveY) {
-            // var temp = list.getElementsByTagName("li")[index].innerHTML;
-            // list.getElementsByTagName("li")[index].innerHTML = list.getElementsByTagName("li")[index-1].innerHTML;
-            // list.getElementsByTagName("li")[index-1].innerHTML = temp;
-            y += 20;
-          } else if ($event.offsetY <= belowY) {
-            // var temp = list.getElementsByTagName("li")[index].innerHTML;
-            // list.getElementsByTagName("li")[index].innerHTML = list.getElementsByTagName("li")[index+1].innerHTML;
-            // list.getElementsByTagName("li")[index+1].innerHTML = temp;
-            y -= 20;
+        function handleDragLeave(e) {
+          $(this).find(".hover-arrow-left").css("display", "none");
+          $(this).find(".hover-arrow-right").css("display", "none");
+        }
+
+        function handleDragEnd(e) {
+          $(".hover-arrow-left").css("display", "none");
+          $(".hover-arrow-right").css("display", "none");
+        }
+
+        function handleDrop(e) {
+          if (dragSrc != this) {
+            dragSrc.remove();
+            this.after(dragSrc);
           }
-          console.log("new y: " + y);
           return false;
         }
 
-        function mouseup() {
-          $document.unbind('mousemove', mousemove);
-          $document.unbind('mouseup', mouseup);
-        }
+        var items = element.parent().children();
+        [].forEach.call(items, function(item) {
+          item.addEventListener('dragstart', handleDragStart, false);
+          item.addEventListener('dragenter', handleDragEnter, false);
+          item.addEventListener('dragover', handleDragOver, false);
+          item.addEventListener('dragleave', handleDragLeave, false);
+          item.addEventListener('dragend', handleDragEnd, false);
+          item.addEventListener('drop', handleDrop, false);
+        });
+
       }
     };
-  }]);
+  });

@@ -34,12 +34,18 @@
   margin-right: 20px;
 }
 
+.profile-section .lists ul {
+  margin-top: -29.43px;
+}
+
 .profile-section .lists .genre-list {
   width: 50%;
+  position: relative;
 }
 
 .profile-section .lists .mood-list {
   width: 50%;
+  position: relative;
 }
 
 .profile-section .lists h1 {
@@ -47,7 +53,7 @@
   color: white;
   font-family: Impact, Charcoal, sans-serif;
   font-size: 24px;
-  padding: 20px;
+  padding: 21px;
 }
 
 .profile-section .lists li {
@@ -61,4 +67,29 @@
 .profile-section .lists li:hover {
   background: var(--ucritic);
   cursor: move;
+}
+
+.pre-list:hover {
+  background: var(--dark-gray)!important;
+}
+
+.profile-section .lists .pre-list {
+  background: var(--dark-gray);
+  color: var(--dark-gray);
+}
+
+.hover-arrow-left {
+  color: var(--ucritic);
+  position: absolute;
+  left: 0;
+  display: none;
+  margin-left: 40px;
+}
+
+.hover-arrow-right {
+  position: absolute;
+  display: none;
+  color: var(--ucritic);
+  right: 0;
+  margin-right: -10px;
 }
