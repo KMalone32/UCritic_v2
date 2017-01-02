@@ -1,0 +1,64 @@
+.profile-section {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+
+.profile-section .user-info {
+  width: 220px;
+}
+
+.profile-section .user-info img {
+  width: 200px;
+  border: solid 3px var(--main);
+  box-shadow: 5px 5px 0px var(--trans2);
+  margin-left: 20px;
+}
+
+.profile-section .user-info img:hover {
+  cursor: pointer;
+}
+
+.profile-section .user-info h1 {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  width: 200px;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+.profile-section .lists {
+  display: flex;
+  width: calc(100% - 200px);
+  margin-right: 20px;
+}
+
+.profile-section .lists .genre-list {
+  width: 50%;
+}
+
+.profile-section .lists .mood-list {
+  width: 50%;
+}
+
+.profile-section .lists h1 {
+  margin-left: 30px;
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 24px;
+  padding: 20px;
+}
+
+.profile-section .lists li {
+  padding: 5px;
+  color: white;
+  margin: 0px 0px 0px 50px;
+  background: var(--main);
+  border: solid 2px var(--dark-gray);
+}
+
+.profile-section .lists li:hover {
+  background: var(--ucritic);
+  cursor: move;
+}

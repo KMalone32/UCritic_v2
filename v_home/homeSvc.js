@@ -58,7 +58,7 @@ angular.module("ucritic").service("homeSvc", function($http) {
     var html =
       '<div id="newComment" class="comment">' +
       '<div class="commentInfo">' +
-      '<span class="infoLeft"><a id="your-profile">Profile_Name</a></span>' +
+      '<span class="infoLeft"><a id="your-profile">michael_scott22</a></span>' +
       '<span class="infoRight"><a id="your-profile" ng-click="support($event)">Support</a> | <a ng-click="reply($event)">Reply</a> | <a ng-click="minimize($event)">Minimize</a></span>' +
       '</div><br><div class="commentContent"><p>' +
       comment +
@@ -75,7 +75,7 @@ angular.module("ucritic").service("homeSvc", function($http) {
     var html =
       '<div id="newReply" class="subComment">' +
       '<div class="commentInfo">' +
-      '<span class="infoLeft"><a id="your-profile">Profile_Name</a></span>' +
+      '<span class="infoLeft"><a id="your-profile">michael_scott22</a></span>' +
       '<span class="infoRight"><a id="your-profile" ng-click="support($event)">Support</a> | <a ng-click="reply($event)">Reply</a> | <a ng-click="minimize($event)">Minimize</a></span>' +
       '</div><br><div class="commentContent"><p>' +
       reply +
