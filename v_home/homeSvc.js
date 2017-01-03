@@ -1,4 +1,4 @@
-angular.module("ucritic").service("homeSvc", function($https) {
+angular.module("ucritic").service("homeSvc", function($http) {
 
   var currentMovie;
   var listMovies = [];
@@ -6,9 +6,9 @@ angular.module("ucritic").service("homeSvc", function($https) {
 
   this.getMovies = function(movie) {
     currentView = true;
-    $https ({
+    $http ({
       method: 'GET',
-      url: 'http://www.omdbapi.com/?s=*' + movie + '*&type=movie'
+      url: 'https://www.omdbapi.com/?s=*' + movie + '*&type=movie'
     }).then(function(omdbapi) {
       if (omdbapi.data.Response !== "False") {
         var movies = omdbapi.data.Search;
@@ -27,9 +27,9 @@ angular.module("ucritic").service("homeSvc", function($https) {
 
   this.saveMovie = function(movie) {
     currentMovie = movie;
-    $https ({
+    $http ({
       method: 'GET',
-      url: 'http://www.omdbapi.com/?t=' + movie.Title + '&type=movie&tomatoes=true'
+      url: 'https://www.omdbapi.com/?t=' + movie.Title + '&type=movie&tomatoes=true'
     }).then(function(omdbapi) {
       $("#synopsis").text(omdbapi.data.Plot);
       $("#target").attr("placeholder", movie.Title).val("").focus().blur();
