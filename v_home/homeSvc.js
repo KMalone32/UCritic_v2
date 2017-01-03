@@ -1,4 +1,4 @@
-angular.module("ucritic").service("homeSvc", function($http) {
+angular.module("ucritic").service("homeSvc", function($https) {
 
   var currentMovie;
   var listMovies = [];
@@ -6,7 +6,7 @@ angular.module("ucritic").service("homeSvc", function($http) {
 
   this.getMovies = function(movie) {
     currentView = true;
-    $http ({
+    $https ({
       method: 'GET',
       url: 'http://www.omdbapi.com/?s=*' + movie + '*&type=movie'
     }).then(function(omdbapi) {
@@ -27,7 +27,7 @@ angular.module("ucritic").service("homeSvc", function($http) {
 
   this.saveMovie = function(movie) {
     currentMovie = movie;
-    $http ({
+    $https ({
       method: 'GET',
       url: 'http://www.omdbapi.com/?t=' + movie.Title + '&type=movie&tomatoes=true'
     }).then(function(omdbapi) {
