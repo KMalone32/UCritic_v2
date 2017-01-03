@@ -8,7 +8,7 @@ angular.module("ucritic").service("homeSvc", function($http) {
     currentView = true;
     $http ({
       method: 'GET',
-      url: 'https://www.omdbapi.com/?s=*' + movie + '*&type=movie'
+      url: 'https://www.omdbapi.com/?s=*' + movie + '*&type=movie' 
     }).then(function(omdbapi) {
       if (omdbapi.data.Response !== "False") {
         var movies = omdbapi.data.Search;
